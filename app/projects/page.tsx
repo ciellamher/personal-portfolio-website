@@ -18,17 +18,29 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {finishedProjects.map((project, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-neutral-200 flex flex-col group hover:border-neutral-900 transition-all h-full">
+            <div key={i} className="relative bg-white p-8 rounded-3xl border border-neutral-200 flex flex-col group hover:border-neutral-900 transition-all h-full hover:shadow-sm">
               <div className="flex flex-1 flex-col">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-2">
-                    <h2 className="text-2xl font-bold">{project.name}</h2>
+                    <h2 className="text-2xl font-bold">
+                       {project.link !== "#" ? (
+                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="before:absolute before:inset-0 focus:outline-none">
+                           {project.name}
+                         </a>
+                       ) : (
+                         project.name
+                       )}
+                    </h2>
                   </div>
-                  {project.link !== "#" && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 bg-neutral-50 rounded-full text-neutral-400 hover:text-neutral-900 transition-colors">
+                  {project.githubLink ? (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="relative z-10 p-2 bg-neutral-50 rounded-full text-neutral-400 hover:text-neutral-900 transition-colors pointer-events-auto">
                       <Github size={22} />
                     </a>
-                  )}
+                  ) : project.link !== "#" ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="relative z-10 p-2 bg-neutral-50 rounded-full text-neutral-400 hover:text-neutral-900 transition-colors pointer-events-auto">
+                      <Github size={22} />
+                    </a>
+                  ) : null}
                 </div>
                 <p className="text-neutral-600 leading-relaxed mb-6 text-sm">{project.desc}</p>
 

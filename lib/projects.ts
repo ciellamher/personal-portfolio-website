@@ -7,6 +7,7 @@ export type Project = {
   desc: string;
   tech: string[];
   link: string;
+  githubLink?: string;
   keyFeatures?: string[];
   caseStudyPrompt?: string;
   thumbnailPrompt?: string;
@@ -37,6 +38,7 @@ const oldDescriptions: Record<string, string> = {
   "Interactive Digital Clock UI": "A front-end interface project focused on timing visualization, animation rhythm, and pixel-accurate clock presentation.",
   "Interactive Analog Clock UI": "A CSS-first analog clock interface emphasizing layout precision, dynamic hand movement, and clean visual balance.",
   "Shell Number Guessing Game": "A command-line game implemented with shell scripting fundamentals to practice flow control, input handling, and terminal UX.",
+  "HAU Org Finder": "A data-driven web application built with React and Vite to help university students match with campus organizations based on personality, career goals, and interests, featuring a robust filtering algorithm and responsive UI.",
 };
 
 const buildDescription = (project: ProjectSeed): string => {
@@ -56,6 +58,14 @@ const buildDescription = (project: ProjectSeed): string => {
 };
 
 const projectSeeds: ProjectSeed[] = [
+  {
+    name: "HAU Org Finder",
+    status: "Finished",
+    date: "May 2026",
+    tech: ["React", "Vite", "Web Dev", "UI/UX", "JavaScript", "Git", "Version Control"],
+    link: "https://hau-org-finder.vercel.app/",
+    githubLink: "https://github.com/ciellamher/hau-org-finder",
+  },
   {
     name: "Algorithmic Memory Allocation Simulator",
     status: "Finished",
