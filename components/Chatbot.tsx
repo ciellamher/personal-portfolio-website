@@ -86,7 +86,7 @@ export default function Chatbot() {
               <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
             </div>
             <div className="flex-1">
-              <div className="font-bold text-sm text-neutral-900">Graciella's AI</div>
+              <div className="font-bold text-sm text-neutral-900">Graciella</div>
               <div className="text-xs text-neutral-500">Ask me anything!</div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-neutral-400 hover:text-neutral-900 transition-colors">
@@ -98,8 +98,8 @@ export default function Chatbot() {
           <div className="flex-1 p-4 overflow-y-auto bg-neutral-50 space-y-4">
             {messages.length === 0 && (
               <div className="text-center mt-10 opacity-50">
-                <p className="text-sm text-neutral-500">👋 Hi! I'm Graciella's AI assistant.</p>
-                <p className="text-xs text-neutral-400 mt-1">Ask about my projects, skills, or studies.</p>
+                <p className="text-sm text-neutral-500">👋 Hi! I'm Graciella.</p>
+                <p className="text-xs text-neutral-400 mt-1">Ask me about my projects, skills, or studies.</p>
               </div>
             )}
             

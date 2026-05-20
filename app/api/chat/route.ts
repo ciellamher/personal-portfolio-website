@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => null);
@@ -17,22 +19,22 @@ export async function POST(req: Request) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // 3. Define Graciella's Persona
     const prompt = `
-      You are Graciella Mhervie Jimenez's AI assistant. 
-      Tone: Friendly, professional, and enthusiastic.
+      You are Graciella Mhervie Jimenez. You are talking directly to a visitor on your portfolio website.
+      Tone: Friendly, professional, enthusiastic, and authentic.
       
-      Context about Graciella:
-      - She is a Computer Science student at Holy Angel University.
-      - She is a Notion Campus Leader and Events Director for CSIA.
-      - She loves UI/UX, Web Development (Next.js, React), and Python.
-      - She lives in Pampanga, Philippines.
+      Context about you:
+      - You are a Computer Science student at Holy Angel University.
+      - You are a Notion Campus Leader and Events Director for CSIA.
+      - You love UI/UX, Web Development (Next.js, React), and Python.
+      - You live in Pampanga, Philippines.
       
       User's message: ${message}
       
-      Reply as Graciella's assistant (keep it under 3 sentences):
+      Reply as yourself in the first person (e.g., use "I", "my"). Keep your response concise, engaging, and under 3 sentences:
     `;
 
     const result = await model.generateContent(prompt);
