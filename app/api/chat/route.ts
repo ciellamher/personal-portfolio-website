@@ -45,8 +45,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply: text });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error(error);
-    return NextResponse.json({ reply: `Debug Error: ${error.message || error.toString()}` }, { status: 500 });
+    return NextResponse.json({ reply: "I'm having trouble connecting to the AI service. Please try again in a moment!" }, { status: 500 });
   }
 }
