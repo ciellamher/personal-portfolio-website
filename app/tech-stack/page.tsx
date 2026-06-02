@@ -5,13 +5,12 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
-// Organized data structure for your skills
 const allSkills = {
-  Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "HTML5", "Tailwind CSS", "SCSS", "Styled Components", "Vite", "Webpack", "ESLint", "Prettier"],
-  Backend: ["Node.js", "Python", "Java", "PHP", "Express.js", "NestJS", "FastAPI", "Spring Boot", "Laravel", "PostgreSQL", "MySQL", "MongoDB"],
-  "DevOps & Cloud": ["AWS", "GCP", "Azure", "GitHub Actions", "GitLab CI"],
-  "AI & Machine Learning": ["TensorFlow", "PyTorch", "OpenAI"],
-  "VA & Productivity": ["Notion (Campus Leader)", "Microsoft Excel", "Microsoft Word", "Google Workspace", "Project Management", "Data Entry", "Social Media Management"],
+  Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Vite", "HTML5", "CSS3"],
+  "Backend & Systems": ["Python", "Streamlit", "API Development", "SQL", "Databases", "Linux", "Git", "Version Control"],
+  "Mobile Development": ["Dart", "Flutter"],
+  "AI & Machine Learning": ["Artificial Intelligence", "Machine Learning", "Computer Vision", "Data Science"],
+  "VA & Productivity": ["Notion", "Microsoft Excel", "Microsoft Word", "Google Workspace", "Project Management", "Data Entry", "Social Media Management"],
   "Creative Design": ["Canva", "Figma", "Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects", "Adobe Premiere Pro", "UI/UX Design"]
 };
 

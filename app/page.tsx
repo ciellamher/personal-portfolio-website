@@ -219,7 +219,7 @@ export default function Home() {
                         <div>
                            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">Frontend</span>
                            <div className="flex flex-wrap gap-2">
-                              {["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "HTML5", "Tailwind CSS", "SCSS", "Styled Components", "Vite", "Webpack", "ESLint", "Prettier"].map(t => (
+                              {["JavaScript", "TypeScript", "React", "Next.js", "Vite", "HTML5", "CSS3"].map(t => (
                                  <span key={t} className="inline-flex h-11 items-center justify-center whitespace-nowrap px-4 bg-white border border-neutral-200 text-sm font-medium text-neutral-900 rounded-xl hover:border-neutral-900 transition-colors cursor-default leading-none">
                                     {t}
                                  </span>
@@ -227,11 +227,35 @@ export default function Home() {
                            </div>
                         </div>
 
-                        {/* Backend */}
+                        {/* Backend & Systems */}
                         <div>
-                           <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">Backend</span>
+                           <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">Backend & Systems</span>
                            <div className="flex flex-wrap gap-2">
-                              {["Node.js", "Python", "Java", "C++", "Ruby", "PHP", "Express.js", "NestJS", "FastAPI", "Spring Boot", "Laravel", "PostgreSQL", "MySQL", "MongoDB"].map(t => (
+                              {["Python", "Streamlit", "API Development", "SQL", "Databases", "Linux", "Git", "Version Control"].map(t => (
+                                 <span key={t} className="inline-flex h-11 items-center justify-center whitespace-nowrap px-4 bg-white border border-neutral-200 text-sm font-medium text-neutral-900 rounded-xl hover:border-neutral-900 transition-colors cursor-default leading-none">
+                                    {t}
+                                 </span>
+                              ))}
+                           </div>
+                        </div>
+
+                        {/* Mobile Development */}
+                        <div>
+                           <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">Mobile Development</span>
+                           <div className="flex flex-wrap gap-2">
+                              {["Dart", "Flutter"].map(t => (
+                                 <span key={t} className="inline-flex h-11 items-center justify-center whitespace-nowrap px-4 bg-white border border-neutral-200 text-sm font-medium text-neutral-900 rounded-xl hover:border-neutral-900 transition-colors cursor-default leading-none">
+                                    {t}
+                                 </span>
+                              ))}
+                           </div>
+                        </div>
+
+                        {/* AI & Machine Learning */}
+                        <div>
+                           <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">AI & Machine Learning</span>
+                           <div className="flex flex-wrap gap-2">
+                              {["Artificial Intelligence", "Machine Learning", "Computer Vision", "Data Science"].map(t => (
                                  <span key={t} className="inline-flex h-11 items-center justify-center whitespace-nowrap px-4 bg-white border border-neutral-200 text-sm font-medium text-neutral-900 rounded-xl hover:border-neutral-900 transition-colors cursor-default leading-none">
                                     {t}
                                  </span>
@@ -243,7 +267,7 @@ export default function Home() {
                         <div>
                            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] block mb-4">VA & Productivity</span>
                            <div className="flex flex-wrap gap-2">
-                              {["Notion (Campus Leader)", "Microsoft Excel", "Microsoft Word", "Google Workspace", "Project Management", "Data Entry", "Social Media Management"].map(t => (
+                              {["Notion", "Microsoft Excel", "Microsoft Word", "Google Workspace", "Project Management", "Data Entry", "Social Media Management"].map(t => (
                                  <span key={t} className="inline-flex h-11 items-center justify-center whitespace-nowrap px-4 bg-white border border-neutral-200 text-sm font-medium text-neutral-900 rounded-xl hover:border-neutral-900 transition-colors cursor-default leading-none">
                                     {t}
                                  </span>

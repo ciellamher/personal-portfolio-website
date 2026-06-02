@@ -5,7 +5,7 @@ import { allProjects } from "../../lib/projects";
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const finishedProjects = allProjects.filter((project) => project.status === "Finished");
+  const finishedProjects = allProjects.filter((project) => project.status === "Finished" || project.status === "Ongoing");
 
   return (
     <main className="min-h-screen bg-[#FDFDFD] text-neutral-900 py-20 px-6 font-sans">

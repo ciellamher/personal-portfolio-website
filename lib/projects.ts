@@ -1,4 +1,4 @@
-export type ProjectStatus = "Finished" | "Not started";
+export type ProjectStatus = "Finished" | "Ongoing" | "Not started";
 
 export type Project = {
   name: string;
@@ -39,6 +39,7 @@ const oldDescriptions: Record<string, string> = {
   "Interactive Analog Clock UI": "A CSS-first analog clock interface emphasizing layout precision, dynamic hand movement, and clean visual balance.",
   "Shell Number Guessing Game": "A command-line game implemented with shell scripting fundamentals to practice flow control, input handling, and terminal UX.",
   "HAU Org Finder": "A data-driven web application built with React and Vite to help university students match with campus organizations based on personality, career goals, and interests, featuring a robust filtering algorithm and responsive UI.",
+  "The Daily Dish": "An ongoing serverless client-side recipe manager and meal planner Single Page Application (SPA) built with native ES modules and vanilla CSS. It features a custom pub-sub reactive state store mapped to LocalStorage, zero-latency lo-fi synthesizers powered by the Web Audio API, and canvas-generated custom recipe cards.",
 };
 
 const buildDescription = (project: ProjectSeed): string => {
@@ -54,10 +55,22 @@ const buildDescription = (project: ProjectSeed): string => {
     return `Completed project focused on ${scope}.`;
   }
 
+  if (project.status === "Ongoing") {
+    return `Ongoing project focused on ${scope}.`;
+  }
+
   return `Planned project focused on ${scope}.`;
 };
 
 const projectSeeds: ProjectSeed[] = [
+  {
+    name: "The Daily Dish",
+    status: "Ongoing",
+    date: "Ongoing",
+    tech: ["HTML", "CSS", "JavaScript", "Web Dev", "UI/UX", "Git", "Version Control"],
+    link: "https://github.com/ciellamher/the-daily-dish",
+    githubLink: "https://github.com/ciellamher/the-daily-dish",
+  },
   {
     name: "HAU Org Finder",
     status: "Finished",
@@ -263,13 +276,6 @@ const projectSeeds: ProjectSeed[] = [
     link: "#",
   },
   {
-    name: "Cookbook and Meal Planner",
-    status: "Not started",
-    date: "",
-    tech: ["Web Dev", "UI/UX", "Databases"],
-    link: "#",
-  },
-  {
     name: "Smart Grid Energy Demand Forecasting",
     status: "Not started",
     date: "",
@@ -297,4 +303,4 @@ export const allProjects: Project[] = projectSeeds.map((project) => ({
   desc: buildDescription(project),
 }));
 
-export const recentProjects = allProjects.filter((project) => project.status === "Finished").slice(0, 4);
+export const recentProjects = allProjects.filter((project) => project.status === "Finished" || project.status === "Ongoing").slice(0, 4);
