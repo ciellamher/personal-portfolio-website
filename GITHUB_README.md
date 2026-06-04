@@ -83,7 +83,7 @@ Wherever I am and whatever I do, I keep an open mind and always strive to do my 
 <table align="center" width="100%">
   <tr>
     <td align="center" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=ciellamher&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" width="100%" />
+      <img src="https://github-readme-stats-git.vercel.app/api?username=ciellamher&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" width="100%" />
     </td>
     <td align="center" width="50%">
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=ciellamher&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" alt="Streak Stats" width="100%" />
@@ -91,7 +91,7 @@ Wherever I am and whatever I do, I keep an open mind and always strive to do my 
   </tr>
   <tr>
     <td align="center" colspan="2">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ciellamher&layout=compact&theme=radical&hide_border=true" alt="Top Languages" width="60%" />
+      <img src="https://github-readme-stats-git.vercel.app/api/top-langs/?username=ciellamher&layout=compact&theme=radical&hide_border=true" alt="Top Languages" width="60%" />
     </td>
   </tr>
 </table>
