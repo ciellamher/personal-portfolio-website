@@ -142,7 +142,7 @@ export default function Home() {
                   </a>
 
                   <a
-                     href="/Graciella_Jimenez_CV.pdf"
+                     href="/Graciella_Jimenez_Computer_Science_CV.pdf"
                      download
                      className="flex items-center gap-2 px-5 py-3 bg-white border border-neutral-200 text-neutral-900 rounded-xl hover:bg-neutral-100 transition-all duration-300 font-semibold text-sm hover:scale-105 no-underline cursor-pointer"
                   >
@@ -592,7 +592,7 @@ export default function Home() {
                      <ChevronRight size={16} className="text-neutral-400" />
                   </a>
 
-                  <a href="/Graciella_Jimenez_CV.pdf" download className="flex-1 bg-white p-4 rounded-2xl border border-neutral-200 flex justify-between items-center cursor-pointer hover:bg-neutral-50 transition-transform duration-300 hover:scale-[1.02] no-underline">
+                  <a href="/Graciella_Jimenez_Computer_Science_CV.pdf" download className="flex-1 bg-white p-4 rounded-2xl border border-neutral-200 flex justify-between items-center cursor-pointer hover:bg-neutral-50 transition-transform duration-300 hover:scale-[1.02] no-underline">
                      <div className="flex items-center gap-2">
                         <Download size={18} className="text-neutral-900" />
                         <span className="text-sm font-bold text-neutral-900">Download CV</span>

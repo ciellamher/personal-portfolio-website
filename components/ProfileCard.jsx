@@ -17,7 +17,7 @@ export default function ActionButtons() {
 
       {/* 2. CV Download - Place your PDF in the 'public' folder */}
       <a 
-        href="/Graciella_Jimenez_CV.pdf" 
+        href="/Graciella_Jimenez_Computer_Science_CV.pdf" 
         download
         className="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-2xl hover:bg-gray-50 transition-all font-medium text-black no-underline cursor-pointer"
       >
