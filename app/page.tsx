@@ -54,6 +54,7 @@ export default function Home() {
          return;
       }
 
+      const container = gallery.parentElement || gallery;
       let animationFrameId = 0;
       let lastTimestamp = 0;
       let isPaused = false;
@@ -90,19 +91,19 @@ export default function Home() {
          animationFrameId = window.requestAnimationFrame(animate);
       };
 
-      gallery.addEventListener("mouseenter", pause);
-      gallery.addEventListener("mouseleave", resume);
-      gallery.addEventListener("focusin", pause);
-      gallery.addEventListener("focusout", resume);
+      container.addEventListener("mouseenter", pause);
+      container.addEventListener("mouseleave", resume);
+      container.addEventListener("focusin", pause);
+      container.addEventListener("focusout", resume);
 
       animationFrameId = window.requestAnimationFrame(animate);
 
       return () => {
          window.cancelAnimationFrame(animationFrameId);
-         gallery.removeEventListener("mouseenter", pause);
-         gallery.removeEventListener("mouseleave", resume);
-         gallery.removeEventListener("focusin", pause);
-         gallery.removeEventListener("focusout", resume);
+         container.removeEventListener("mouseenter", pause);
+         container.removeEventListener("mouseleave", resume);
+         container.removeEventListener("focusin", pause);
+         container.removeEventListener("focusout", resume);
       };
    }, []);
 
@@ -289,7 +290,8 @@ export default function Home() {
                         {[
                            // CURRENT ACTIVE ROLES (Black Dots)
                            { title: "Notion Campus Leader", org: "Notion - Holy Angel University", year: "2026", active: true },
-                           { title: "Volunteer", org: "Each One Teach One", year: "2026", active: true },
+                           { title: "Volunteer", org: "Each One Teach One Philippines", year: "2026", active: true },
+                           { title: "Volunteer", org: "DEVCON.PH", year: "2024", active: true },
                            { title: "Events Director", org: "Cybersecurity Intelligence Alliance", year: "2026", active: false },
                            { title: "Events Lead", org: "Google Developer Groups on Campus - Holy Angel University", year: "2026", active: false },
                            { title: "Volunteer", org: "Notion - Holy Angel University", year: "2025", active: false },
@@ -300,7 +302,12 @@ export default function Home() {
                            { title: "Secretary", org: "SCALI Supreme Student Council", year: "2021", active: false },
                            { title: "Facilities and Logistics", org: "Holy Angel University - Student Council", year: "2024", active: false },
                            { title: "Business Manager", org: "University of the Assumption – UASHS Supreme Student Council", year: "2022", active: false }
-                        ].sort((a, b) => parseInt(b.year) - parseInt(a.year)) // Sort by Year Descending
+                        ].sort((a, b) => {
+                           if (a.active !== b.active) {
+                              return a.active ? -1 : 1;
+                           }
+                           return parseInt(b.year) - parseInt(a.year);
+                        }) // Sort active roles first, then by year descending
                            .map((item, i) => (
                               <div key={i} className="relative pl-10 group">
                                  {/* Timeline Dot: Black for active, Grey for past */}
@@ -338,7 +345,11 @@ export default function Home() {
                   <section className="bg-white p-6 md:p-8 rounded-3xl border border-neutral-200 h-full flex flex-col justify-between">
                      <div>
                         <h3 className="text-xl font-bold flex items-center gap-2 mb-4 text-neutral-900">
-                           <Heart size={22} className="text-neutral-900" /> Beyond Coding
+                           <img 
+                              src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxjLA80kau9tjXOxhlZk5VV.0ipITXR7kEC_uNxEet0iuGwViGGXU3GB.AKmUCtG2RYDx3s6u611uyhUGN5NMToo-&format=source" 
+                              alt="Beyond Coding Icon" 
+                              className="w-[22px] h-[22px] object-contain"
+                           /> Beyond Coding
                         </h3>
                         <p className="text-neutral-600 text-sm leading-relaxed mb-6">
                            When not writing code, I organize large-scale campus events and serve as a Notion Campus Leader.
@@ -498,19 +509,19 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5, delay: 0.12 }} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
                <div className="h-full bg-white p-6 md:p-8 rounded-[2rem] border border-neutral-200 flex flex-col">
                   <h3 className="text-sm font-bold flex items-center gap-2 mb-6 text-neutral-900">
-                     <Users size={18} className="text-neutral-400" /> A member of
+                     <Users size={18} className="text-neutral-400" /> A volunteer of
                   </h3>
                   <div className="space-y-3">
                      {[
                         { name: "Notion at HAU", link: "https://instagram.com/notion.hau" },
-                        { name: "GDG on Campus at HAU", link: "https://gdsc.community.dev/holy-angel-university/" },
-                        { name: "Cybersecurity Intelligence Alliance", link: "https://www.facebook.com/csia.hausoc/" }
+                        { name: "DEVCON.PH", link: "https://devcon.ph/pampanga/" },
+                        { name: "Each One Teach One Philippines", link: "https://www.instagram.com/eachteach.ph/" }
                      ].map((org, i) => (
                         <a
                            key={i}
                            href={org.link}
-                           target="_blank"
-                           rel="noopener noreferrer"
+                           target={org.link === "#" ? "_self" : "_blank"}
+                           rel={org.link === "#" ? undefined : "noopener noreferrer"}
                            className="p-4 bg-neutral-50 rounded-2xl border border-neutral-100 flex justify-between items-center group cursor-pointer hover:bg-white hover:border-neutral-900 transition-all no-underline"
                         >
                            <span className="text-[11px] font-bold text-neutral-700 group-hover:text-neutral-900 transition-colors">
@@ -530,7 +541,7 @@ export default function Home() {
                      {[
                         { name: "LinkedIn", icon: <Linkedin size={18} />, link: "https://www.linkedin.com/in/ciellamher/" },
                         { name: "GitHub", icon: <Github size={18} />, link: "https://github.com/ciellamher" },
-                        { name: "Instagram", icon: <Instagram size={18} />, link: "https://instagram.com/ciellamhar" },
+                        { name: "Instagram", icon: <Instagram size={18} />, link: "https://www.instagram.com/ciellamher/" },
                         { name: "Facebook", icon: <MessageSquare size={18} />, link: "https://www.facebook.com/gramenez/" }
                      ].map((social, i) => (
                         <a
@@ -560,9 +571,9 @@ export default function Home() {
                         Available for speaking at events about software development, leadership, and Notion productivity.
                      </p>
                   </div>
-                  <div className="mt-6 flex items-center gap-2 text-xs font-bold text-neutral-900 cursor-pointer hover:underline">
+                  <a href="mailto:work.gmdjimenez@gmail.com" className="mt-6 flex items-center gap-2 text-xs font-bold text-neutral-900 hover:underline no-underline w-fit">
                      Get in touch <ChevronRight size={14} />
-                  </div>
+                  </a>
                </div>
 
                <div className="h-full space-y-3 flex flex-col">
@@ -633,7 +644,7 @@ export default function Home() {
             </motion.section>
 
             {/* ROW 6: GET IN TOUCH */}
-            <section className="text-center max-w-2xl mx-auto py-12 md:py-24">
+            <section id="contact" className="text-center max-w-2xl mx-auto py-12 md:py-24">
                <div className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                   Contact
                </div>
@@ -641,7 +652,7 @@ export default function Home() {
                   Get in Touch
                </h2>
                <p className="text-lg text-neutral-600 leading-relaxed font-medium">
-                  Want to chat? Just shoot me a DM on <a href="instagram.com/ciellamher" className="text-blue-600 hover:underline">Instagram</a> or <a href="mailto:work.gmdjimenez@gmail.com" className="text-blue-600 hover:underline">drop me an email</a>.
+                  Want to chat? Schedule a call through <a href="https://calendar.app.google/EVMe3RzST39L25MH9" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Calendly</a>, or <a href="mailto:work.gmdjimenez@gmail.com" className="text-blue-600 hover:underline">drop me an email</a>.
                </p>
             </section>
 
