@@ -290,7 +290,7 @@ export default function Home() {
                         {[
                            // CURRENT ACTIVE ROLES (Black Dots)
                            { title: "Notion Campus Leader", org: "Notion - Holy Angel University", year: "2026", active: true },
-                           { title: "Volunteer", org: "Each One Teach One Philippines", year: "2026", active: true },
+                           { title: "Volunteer", org: "Each One Teach One Philippines", year: "2023", active: true },
                            { title: "Volunteer", org: "DEVCON.PH", year: "2024", active: true },
                            { title: "Events Director", org: "Cybersecurity Intelligence Alliance", year: "2026", active: false },
                            { title: "Events Lead", org: "Google Developer Groups on Campus - Holy Angel University", year: "2026", active: false },
