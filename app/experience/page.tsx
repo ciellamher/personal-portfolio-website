@@ -27,7 +27,7 @@ export default function ExperiencePage() {
         </button>
         
         <h1 className="text-4xl font-bold mb-4 tracking-tight flex items-center gap-3 text-neutral-900 dark:text-white transition-colors duration-700">
-          <Briefcase size={32} className="text-neutral-900 dark:text-white transition-colors duration-700" /> Experience Journey
+          <Briefcase size={32} className="text-neutral-900 dark:text-white transition-colors duration-700" /> Experience
         </h1>
         <p className="text-neutral-500 dark:text-neutral-400 mb-16 text-sm transition-colors duration-700 max-w-2xl">
           A timeline of my professional roles, leadership positions, and volunteer work, showcasing my growth and contributions over the years.
