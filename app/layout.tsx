@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Chatbot from "@/components/Chatbot";
-import WelcomeScreen from "@/components/WelcomeScreen";
+import Chatbot from "@/components/ui/Chatbot";
+import WelcomeScreen from "@/components/ui/WelcomeScreen";
+import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import NavBar from "@/components/ui/NavBar";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,11 +59,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/me.jpeg', type: 'image/jpeg', sizes: 'any' },
+      { url: '/logo-black.png', type: 'image/png', sizes: 'any' },
       { url: '/favicon.ico', sizes: '48x48' },
     ],
-    apple: '/me.jpeg',
-    shortcut: '/me.jpeg',
+    apple: '/logo-black.png',
+    shortcut: '/logo-black.png',
   },
   openGraph: {
     type: 'profile',
@@ -212,12 +215,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth scroll-pt-[100px]" suppressHydrationWarning>
       <head>
-        {/* Favicon / Site icon — Google uses this to show your photo next to your URL in search */}
-        <link rel="icon" href="/me.jpeg" type="image/jpeg" />
-        <link rel="shortcut icon" href="/me.jpeg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/me.jpeg" />
+        {/* Favicon / Site icon */}
+        <link rel="icon" href="/logo-black.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo-black.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo-black.png" />
         {/* JSON-LD Structured Data for Google rich results */}
         <script
           type="application/ld+json"
@@ -227,9 +230,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <WelcomeScreen />
-        {children}
-        <Chatbot />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NavBar />
+          <AnimatedBackground />
+          <WelcomeScreen />
+          {children}
+          <Chatbot />
+        </ThemeProvider>
       </body>
     </html>
   );

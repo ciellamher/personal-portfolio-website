@@ -5,6 +5,13 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 const allCerts = [
   // --- 2026 CERTIFICATIONS ---
   { 
+    name: "Introduction to Generative AI", 
+    org: "Google Digital Academy (Skillshop)", 
+    date: "Jul 2026", 
+    img: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+    link: "#" 
+  },
+  { 
     name: "Data Analytics Essentials", 
     org: "Cisco", 
     date: "Mar 2026", 
@@ -133,22 +140,22 @@ export default function CertificationsPage() {
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-[#FDFDFD] text-neutral-900 py-20 px-6 font-sans">
+    <main className="min-h-screen bg-[#FDFDFD] dark:bg-neutral-900 text-neutral-900 dark:text-white py-20 px-6 font-sans transition-colors duration-700">
       <div className="max-w-6xl mx-auto">
-        <button onClick={() => router.back()} className="flex items-center gap-2 text-neutral-500 hover:text-neutral-900 transition-colors mb-8 text-sm font-medium cursor-pointer bg-transparent border-0 p-0">
+        <button onClick={() => router.back()} className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors mb-8 text-sm font-medium cursor-pointer bg-transparent border-0 p-0">
           <ArrowLeft size={16} /> Back to Home
         </button>
-        <h1 className="text-4xl font-bold mb-12 tracking-tight">Licenses & Certifications</h1>
+        <h1 className="text-4xl font-bold mb-12 tracking-tight text-neutral-900 dark:text-white transition-colors duration-700">Licenses & Certifications</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allCerts.map((cert, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-neutral-200 flex flex-col items-center text-center hover:border-neutral-900 transition-all group">
-              <img src={cert.img} alt={cert.name} className="w-20 h-20 object-contain mb-4" />
-              <h3 className="font-bold text-neutral-900 text-sm leading-tight mb-1">{cert.name}</h3>
-              <p className="text-xs text-neutral-500 mb-4">{cert.org}</p>
-              <div className="mt-auto w-full pt-4 border-t border-neutral-50 flex justify-between items-center">
-                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">{cert.date}</span>
-                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-neutral-50 rounded-full transition-colors">
-                   <ExternalLink size={16} className="text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+            <div key={i} className="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 flex flex-col items-center text-center hover:border-neutral-900 dark:hover:border-neutral-500 transition-all duration-300 group">
+              <img src={cert.img} alt={cert.name} className="w-20 h-20 object-contain mb-4 rounded-xl dark:bg-white/90 dark:p-2 transition-all duration-700" />
+              <h3 className="font-bold text-neutral-900 dark:text-white text-sm leading-tight mb-1 transition-colors duration-700">{cert.name}</h3>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-4 transition-colors duration-700">{cert.org}</p>
+              <div className="mt-auto w-full pt-4 border-t border-neutral-50 dark:border-neutral-800 flex justify-between items-center transition-colors duration-700">
+                <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest transition-colors duration-700">{cert.date}</span>
+                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-full transition-colors">
+                   <ExternalLink size={16} className="text-neutral-300 dark:text-neutral-600 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
                 </a>
               </div>
             </div>
