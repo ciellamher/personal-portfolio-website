@@ -4,6 +4,13 @@ import { Award, ChevronRight } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
+      name: "Advanced Prompt Engineering with ChatGPT",
+      org: "upGrad",
+      date: "Jul 2026",
+      img: "/logos/upgrad.svg",
+      link: "#"
+    },
+    {
       name: "Introduction to Generative AI",
       org: "Google Digital Academy (Skillshop)",
       date: "Jul 2026",

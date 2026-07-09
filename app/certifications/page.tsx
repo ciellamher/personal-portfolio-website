@@ -5,6 +5,13 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 const allCerts = [
   // --- 2026 CERTIFICATIONS ---
   { 
+    name: "Advanced Prompt Engineering with ChatGPT", 
+    org: "upGrad", 
+    date: "Jul 2026", 
+    img: "/logos/upgrad.svg",
+    link: "#" 
+  },
+  { 
     name: "Introduction to Generative AI", 
     org: "Google Digital Academy (Skillshop)", 
     date: "Jul 2026", 
