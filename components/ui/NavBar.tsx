@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,34 +20,67 @@ export default function NavBar() {
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
+  const isClickScrolling = useRef(false);
+  const clickScrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (pathname !== "/") return;
 
     const handleScroll = () => {
-      let currentSection = "Home";
+      if (isClickScrolling.current) return;
+
+      let closestSection = "Home";
+      let minDistance = Infinity;
+      const targetY = window.innerHeight * 0.3; // 30% from the top
 
       for (const item of navItems) {
         const id = item.href.replace("/#", "");
         const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // 300px from top is a good threshold for "active"
-          if (rect.top <= 300) {
-            currentSection = item.name;
+          let distance;
+          
+          if (rect.top <= targetY && rect.bottom >= targetY) {
+            distance = 0;
+          } else if (rect.top > targetY) {
+            distance = rect.top - targetY;
+          } else {
+            distance = targetY - rect.bottom;
+          }
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestSection = item.name;
           }
         }
       }
 
-      setActiveItem(currentSection);
+      setActiveItem(closestSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Trigger once to set initial state correctly
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: { name: string, href: string }) => {
+    e.preventDefault();
+    setActiveItem(item.name);
+    setIsOpen(false);
+    
+    isClickScrolling.current = true;
+    if (clickScrollTimeout.current) clearTimeout(clickScrollTimeout.current);
+    clickScrollTimeout.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 1000);
+
+    const targetId = item.href.replace('/#', '');
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   if (pathname !== "/") {
     return null;
@@ -79,15 +112,7 @@ export default function NavBar() {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => {
-                  setActiveItem(item.name);
-                  const targetId = item.href.replace('/#', '');
-                  const target = document.getElementById(targetId);
-                  if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={(e) => handleNavClick(e, item)}
                 className={`relative px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
                   isActive ? "text-neutral-900 dark:text-white" : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                 }`}
@@ -131,16 +156,7 @@ export default function NavBar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={(e) => {
-                    setIsOpen(false);
-                    setActiveItem(item.name);
-                    const targetId = item.href.replace('/#', '');
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                      e.preventDefault();
-                      target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={(e) => handleNavClick(e, item)}
                   className={`px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                     isActive 
                       ? "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white" 
