@@ -54,36 +54,39 @@ export default function ExperiencePage() {
                   {/* Timeline Node */}
                   <TimelineNode />
 
-                  <div className="w-full flex flex-col md:flex-row md:items-center justify-between">
-                    {/* Left Side (Desktop) */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      className={`w-full md:w-5/12 pl-14 md:pl-0 relative md:text-right md:pr-12`}
-                    >
-                      {isEven ? <TimelineHeader exp={exp} isEven={true} /> : <TimelineDescription exp={exp} isEven={true} />}
-                    </motion.div>
-                    
-                    {/* Right Side (Desktop) */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      className={`hidden md:block w-full md:w-5/12 md:pl-12 relative text-left`}
-                    >
-                      {isEven ? <TimelineDescription exp={exp} isEven={false} /> : <TimelineHeader exp={exp} isEven={false} />}
-                    </motion.div>
+                  <div className="w-full">
+                    {/* MOBILE LAYOUT (Only visible on small screens) */}
+                    <div className="md:hidden flex flex-col w-full pl-14 gap-4">
+                      <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                        <TimelineHeader exp={exp} isEven={true} />
+                      </motion.div>
+                      <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                        <TimelineDescription exp={exp} isEven={true} />
+                      </motion.div>
+                    </div>
 
-                    {/* Mobile fallback for Right Side content (so it stacks on mobile) */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      className={`md:hidden w-full pl-14 mt-4`}
-                    >
-                      {isEven ? <TimelineDescription exp={exp} isEven={false} /> : <TimelineHeader exp={exp} isEven={false} />}
-                    </motion.div>
+                    {/* DESKTOP LAYOUT (Only visible on md+ screens) */}
+                    <div className="hidden md:flex w-full items-center justify-between">
+                      {/* Left Side */}
+                      <motion.div 
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="w-5/12 relative text-right pr-12"
+                      >
+                        {isEven ? <TimelineHeader exp={exp} isEven={true} /> : <TimelineDescription exp={exp} isEven={true} />}
+                      </motion.div>
+                      
+                      {/* Right Side */}
+                      <motion.div 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="w-5/12 relative text-left pl-12"
+                      >
+                        {isEven ? <TimelineDescription exp={exp} isEven={false} /> : <TimelineHeader exp={exp} isEven={false} />}
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               );

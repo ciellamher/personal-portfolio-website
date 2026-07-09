@@ -8,12 +8,12 @@ export default function HeroSection() {
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative max-w-7xl mx-auto px-4 sm:px-6 min-h-[70vh] md:min-h-[90vh] grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
       <div className="hidden md:block md:col-span-1" />
-      <div className="space-y-6 order-2 md:order-1 md:col-span-5 relative z-20">
+      <div className="space-y-6 order-2 md:order-1 md:col-span-5 relative z-20 flex flex-col items-center md:items-start text-center md:text-left pt-12 md:pt-0">
         <div className="w-fit">
           <h1 id="hero" className="text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white flex items-center gap-3 whitespace-normal md:whitespace-nowrap transition-colors duration-700">
             Graciella Jimenez
           </h1>
-          <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 font-medium text-lg mt-2 pl-1 transition-colors duration-700">
+          <div className="flex items-center justify-center md:justify-start gap-2 text-neutral-500 dark:text-neutral-400 font-medium text-lg mt-2 transition-colors duration-700">
             <MapPin size={20} className="text-neutral-400 dark:text-neutral-500 transition-colors duration-700" />
             Pampanga, Philippines
           </div>
@@ -23,7 +23,7 @@ export default function HeroSection() {
           BS in Computer Science Student | Notion Campus Leader at Holy Angel University
         </p>
 
-        <div className="flex flex-wrap gap-3 pt-4">
+        <div className="flex flex-wrap gap-3 pt-4 justify-center md:justify-start">
           <a
             href="https://calendar.app.google/EVMe3RzST39L25MH9"
             target="_blank"
