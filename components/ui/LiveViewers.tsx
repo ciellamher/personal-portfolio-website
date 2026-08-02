@@ -30,18 +30,18 @@ export default function LiveViewers() {
       {/* Avatar Stack */}
       <div className="flex items-center h-10">
         {viewers > 0 && (
-          <div className="w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden z-30">
-            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover dark:invert" />
+          <div className="w-10 h-10 rounded-full bg-white border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden z-30">
+            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover" />
           </div>
         )}
         {viewers > 1 && (
-          <div className="w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden -ml-3 z-20">
-            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Aneka&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover dark:invert" />
+          <div className="w-10 h-10 rounded-full bg-white border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden -ml-3 z-20">
+            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Mia&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover" />
           </div>
         )}
         {viewers > 2 && (
-          <div className="w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden -ml-3 z-10">
-            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Jasper&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover dark:invert" />
+          <div className="w-10 h-10 rounded-full bg-white border-[2px] border-[#FDFDFD] dark:border-neutral-900 shadow-sm flex items-center justify-center overflow-hidden -ml-3 z-10">
+            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex&backgroundColor=transparent" alt="viewer" className="w-full h-full object-cover" />
           </div>
         )}
         {viewers > 3 && (
