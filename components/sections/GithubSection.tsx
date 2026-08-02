@@ -25,14 +25,14 @@ export default function GithubSection() {
           href="https://github.com/ciellamher" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          className="text-sm font-mono text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
         >
           @ciellamher ↗
         </a>
       </div>
 
       <div className="w-full overflow-x-auto scrollbar-hide flex justify-start lg:justify-center pb-2">
-        <div className="min-w-[800px] flex justify-start lg:justify-center">
+        <div className="min-w-[800px] flex justify-start lg:justify-center text-neutral-800 dark:text-neutral-400 text-xs">
           {mounted && (
             <GitHubCalendar
               username="ciellamher"
