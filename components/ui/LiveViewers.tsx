@@ -6,13 +6,13 @@ export default function LiveViewers() {
   const [viewers, setViewers] = useState(1);
 
   useEffect(() => {
-    setViewers(Math.floor(Math.random() * 10) + 1); // Start with 1-10 on client load
+    setViewers(Math.floor(Math.random() * 2) + 1); // Start with 1-2 on client load
 
     const interval = setInterval(() => {
       setViewers(prev => {
-        const change = Math.floor(Math.random() * 5) - 2; // -2, -1, 0, 1, 2
-        // keep between 1 and 10
-        if (prev + change > 10) return 10;
+        const change = Math.floor(Math.random() * 3) - 1; // -1, 0, 1
+        // keep between 1 and 2
+        if (prev + change > 2) return 2;
         if (prev + change < 1) return 1;
         return prev + change;
       });
@@ -54,7 +54,7 @@ export default function LiveViewers() {
       {/* Text */}
       <div className="text-sm text-neutral-400 dark:text-neutral-500 font-mono tracking-tight">
         <span className="text-neutral-900 dark:text-white font-bold text-base sans-serif tracking-normal mr-1">{viewers}</span> 
-        people viewing now
+        {viewers === 1 ? "person viewing now" : "people viewing now"}
       </div>
     </motion.div>
   );
