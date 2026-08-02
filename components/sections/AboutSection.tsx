@@ -6,7 +6,7 @@ export default function AboutSection() {
       <h3 className="text-xl font-bold flex items-center gap-2 mb-6 text-neutral-900 dark:text-white transition-colors duration-700">
         <Briefcase size={22} className="text-neutral-900 dark:text-white transition-colors duration-700" /> About
       </h3>
-      <div className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed space-y-4 transition-colors duration-700">
+      <div className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed space-y-4 transition-colors duration-700 text-justify">
         <p>
           Hi! I'm Graciella, a Computer Science student at Holy Angel University. I love exploring and embracing new and innovative ideas in different fields. I love the fashion, art, and culture as much as I love the beauty of the field of technology, science, and business.
         </p>

@@ -11,7 +11,7 @@ export default function BeyondCodingSection() {
             className="w-[22px] h-[22px] object-contain dark:invert transition-all duration-700"
           /> Beyond Coding
         </h3>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6 transition-colors duration-700">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6 transition-colors duration-700 text-justify">
           When not writing code, I organize large-scale campus events and serve as a Notion Campus Leader.
           I enjoy turning ideas into structured experiences, whether that means planning programs, refining workflows, or helping teams stay aligned.
           I am especially drawn to community-building, digital productivity, and creating clean systems that make work feel lighter and more intentional.

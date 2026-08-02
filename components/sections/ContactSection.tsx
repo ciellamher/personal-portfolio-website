@@ -63,7 +63,7 @@ export default function ContactSection() {
           <h3 className="text-sm font-bold flex items-center gap-2 mb-4 text-neutral-900 dark:text-white transition-colors duration-700">
             <Mic size={18} className="text-neutral-900 dark:text-white transition-colors duration-700" /> Speaking
           </h3>
-          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed transition-colors duration-700">
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed transition-colors duration-700 text-justify">
             Available for speaking at events about software development, leadership, and Notion productivity.
           </p>
         </div>
