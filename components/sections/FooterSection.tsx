@@ -6,12 +6,11 @@ export default function FooterSection() {
 
       <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-3 transition-colors duration-700">
         <a href="/#about" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">About</a>
-        <a href="/#tech-stack" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Skills</a>
         <a href="/#experience" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Experience</a>
+        <a href="/#tech-stack" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Skills</a>
         <a href="/#projects" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Projects</a>
         <a href="/#certifications" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Certifications</a>
         <a href="/#contact" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Contact</a>
-        <a href="#top" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">Back to top</a>
       </div>
       <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-16 sm:mb-24 transition-colors duration-700">
         <a href="https://github.com/ciellamher" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 dark:hover:text-white transition-colors no-underline">GitHub</a>

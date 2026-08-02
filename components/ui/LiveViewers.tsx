@@ -6,13 +6,13 @@ export default function LiveViewers() {
   const [viewers, setViewers] = useState(1);
 
   useEffect(() => {
-    setViewers(Math.floor(Math.random() * 2) + 1); // Start with 1-2 on client load
+    setViewers(Math.floor(Math.random() * 3) + 1); // Start with 1-3 on client load
 
     const interval = setInterval(() => {
       setViewers(prev => {
         const change = Math.floor(Math.random() * 3) - 1; // -1, 0, 1
-        // keep between 1 and 2
-        if (prev + change > 2) return 2;
+        // keep between 1 and 3
+        if (prev + change > 3) return 3;
         if (prev + change < 1) return 1;
         return prev + change;
       });

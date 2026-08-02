@@ -24,12 +24,16 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6 mt-6 md:mt-12 space-y-10">
 
         {/* ROW 1: About, Tech, Experience */}
-        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5 }} className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-          <div className="lg:col-span-2 h-full flex flex-col gap-6">
-            <AboutSection />
-            <TechStackPreview />
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5 }} className="flex flex-col lg:grid lg:grid-cols-3 gap-6 lg:items-stretch">
+          <div className="contents lg:flex lg:flex-col lg:gap-6 lg:col-span-2 lg:h-full">
+            <div className="order-1 lg:order-none">
+              <AboutSection />
+            </div>
+            <div className="order-3 lg:order-none">
+              <TechStackPreview />
+            </div>
           </div>
-          <div className="lg:col-span-1 flex">
+          <div className="order-2 lg:order-none lg:col-span-1 flex">
             <ExperienceSection />
           </div>
         </motion.div>
