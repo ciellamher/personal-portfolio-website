@@ -106,9 +106,8 @@ export default function NavBar() {
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
           }
-        }} className="flex items-center justify-center shrink-0 ml-2 mr-3 sm:ml-3 sm:mr-5">
-          <img src="/logo-black.png" alt="GMJ Logo" className="w-7 h-7 sm:w-8 sm:h-8 object-contain dark:hidden block" />
-          <img src="/logo-white.png" alt="GMJ Logo" className="w-7 h-7 sm:w-8 sm:h-8 object-contain hidden dark:block" />
+        }} className="flex items-center justify-center shrink-0 ml-3 mr-4 sm:ml-4 sm:mr-6 no-underline">
+          <img src="/me-notion.png" alt="Graciella" className="w-7 h-7 sm:w-8 sm:h-8 object-contain dark:invert" />
         </Link>
 
         {/* Desktop Links */}

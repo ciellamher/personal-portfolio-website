@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import LiveViewers from "@/components/ui/LiveViewers";
 import "./globals.css";
 import Chatbot from "@/components/ui/Chatbot";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import NavBar from "@/components/ui/NavBar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -58,11 +51,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo-black.png', type: 'image/png', sizes: 'any' },
+      { url: '/me-notion.png', type: 'image/png', sizes: 'any' },
       { url: '/favicon.ico', sizes: '48x48' },
     ],
-    apple: '/logo-black.png',
-    shortcut: '/logo-black.png',
+    apple: '/me-notion.png',
+    shortcut: '/me-notion.png',
   },
   openGraph: {
     type: 'profile',
@@ -74,7 +67,7 @@ export const metadata: Metadata = {
       'BS Computer Science student at Holy Angel University, Notion Campus Leader, and frontend developer. Building modern web apps and AI-powered tools from Pampanga, Philippines.',
     images: [
       {
-        url: '/me.jpeg',
+        url: '/me-notion.png',
         width: 800,
         height: 800,
         alt: 'Graciella Jimenez',
@@ -96,7 +89,7 @@ export const metadata: Metadata = {
     title: 'Graciella Jimenez - Computer Science Student & Developer',
     description:
       'BS Computer Science student at Holy Angel University, Notion Campus Leader, and frontend developer.',
-    images: ['/me.jpeg'],
+    images: ['/me-notion.png'],
     creator: '@ciellamher',
   },
   verification: {
@@ -116,8 +109,8 @@ const jsonLd = {
       url: siteUrl,
       image: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/me.jpeg`,
-        contentUrl: `${siteUrl}/me.jpeg`,
+        url: `${siteUrl}/me-notion.png`,
+        contentUrl: `${siteUrl}/me-notion.png`,
         caption: 'Graciella Jimenez',
       },
       description:
@@ -217,9 +210,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-pt-[100px]" suppressHydrationWarning>
       <head>
         {/* Favicon / Site icon */}
-        <link rel="icon" href="/logo-black.png" type="image/png" />
-        <link rel="shortcut icon" href="/logo-black.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo-black.png" />
+        <link rel="icon" href="/me-notion.png" type="image/png" />
+        <link rel="shortcut icon" href="/me-notion.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/me-notion.png" />
         {/* JSON-LD Structured Data for Google rich results */}
         <script
           type="application/ld+json"
@@ -227,13 +220,14 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.className} antialiased bg-white dark:bg-neutral-950`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />
           <AnimatedBackground />
           {children}
           <Chatbot />
+          <LiveViewers />
         </ThemeProvider>
       </body>
     </html>

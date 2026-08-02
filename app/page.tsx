@@ -10,6 +10,7 @@ import RecentProjectsSection from "@/components/sections/RecentProjectsSection";
 import CertificationsSection from "@/components/sections/CertificationsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import GallerySection from "@/components/sections/GallerySection";
+import GithubSection from "@/components/sections/GithubSection";
 import FooterSection from "@/components/sections/FooterSection";
 
 export default function Home() {
@@ -55,8 +56,13 @@ export default function Home() {
           <ContactSection />
         </motion.div>
 
-        {/* ROW 5: GALLERY */}
+        {/* ROW 5: GITHUB */}
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.5, delay: 0.16 }}>
+          <GithubSection />
+        </motion.div>
+
+        {/* ROW 6: GALLERY */}
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.5, delay: 0.20 }}>
           <GallerySection />
         </motion.div>
 

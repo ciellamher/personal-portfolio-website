@@ -73,36 +73,36 @@ export default function ContactSection() {
       </div>
 
       <div className="h-full space-y-3 flex flex-col">
-        <div className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex flex-col gap-2 transition-colors duration-700">
-          <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-xs font-bold uppercase tracking-wider transition-colors duration-700">
+        <div className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex flex-col justify-center gap-1.5 transition-colors duration-700">
+          <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-[11px] font-bold uppercase tracking-wider transition-colors duration-700">
             <Mail size={14} /> <span>EMAIL</span>
           </div>
-          <div className="flex flex-col gap-0">
-            <a href="mailto:work.gmdjimenez@gmail.com" className="text-base font-semibold text-neutral-900 dark:text-white transition-colors duration-700">work.gmdjimenez@gmail.com</a>
-          </div>
+          <a href="mailto:work.gmdjimenez@gmail.com" className="text-[13.5px] font-semibold text-neutral-900 dark:text-white transition-colors duration-700 hover:underline">work.gmdjimenez@gmail.com</a>
         </div>
 
-        <div className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex flex-col gap-2 transition-colors duration-700">
-          <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-xs font-bold uppercase tracking-wider transition-colors duration-700">
+        <div className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex flex-col justify-center gap-1.5 transition-colors duration-700">
+          <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-[11px] font-bold uppercase tracking-wider transition-colors duration-700">
             <Mail size={14} /> <span>NOTION</span>
           </div>
-          <div className="flex flex-col gap-0">
-            <a href="mailto:notion.hau@gmail.com" className="text-base font-semibold text-neutral-900 dark:text-white transition-colors duration-700">notion.hau@gmail.com</a>
-          </div>
+          <a href="mailto:notion.hau@gmail.com" className="text-[13.5px] font-semibold text-neutral-900 dark:text-white transition-colors duration-700 hover:underline">notion.hau@gmail.com</a>
         </div>
 
         <a href="https://calendar.app.google/EVMe3RzST39L25MH9" target="_blank" rel="noopener noreferrer" className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex justify-between items-center cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-[1.02] no-underline">
-          <div className="flex items-center gap-2">
-            <Calendar size={18} className="text-neutral-900 dark:text-white transition-colors duration-700" />
-            <span className="text-sm font-bold text-neutral-900 dark:text-white transition-colors duration-700">Let's Talk</span>
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-[11px] font-bold uppercase tracking-wider transition-colors duration-700">
+              <Calendar size={14} /> <span>MEETING</span>
+            </div>
+            <span className="text-[13.5px] font-semibold text-neutral-900 dark:text-white transition-colors duration-700">Let's Talk</span>
           </div>
           <ChevronRight size={16} className="text-neutral-400 dark:text-neutral-500 transition-colors duration-700" />
         </a>
 
         <a href="/Graciella_Jimenez_Computer_Science_CV.pdf" download className="flex-1 bg-white dark:bg-neutral-900 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex justify-between items-center cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-[1.02] no-underline">
-          <div className="flex items-center gap-2">
-            <Download size={18} className="text-neutral-900 dark:text-white transition-colors duration-700" />
-            <span className="text-sm font-bold text-neutral-900 dark:text-white transition-colors duration-700">Download CV</span>
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 text-[11px] font-bold uppercase tracking-wider transition-colors duration-700">
+              <Download size={14} /> <span>RESUME</span>
+            </div>
+            <span className="text-[13.5px] font-semibold text-neutral-900 dark:text-white transition-colors duration-700">Download CV</span>
           </div>
           <ChevronRight size={16} className="text-neutral-400 dark:text-neutral-500 transition-colors duration-700" />
         </a>

@@ -54,7 +54,7 @@ export default function IDCard() {
             {/* Photo Area */}
             <div className="mt-10 w-44 h-44 rounded-full border-[6px] border-white shadow-lg overflow-hidden relative z-10 bg-neutral-100">
                <img 
-                 src="/me.jpeg" 
+                 src="/me-notion.png" 
                  alt="Graciella" 
                  className="w-full h-full object-cover" 
                />

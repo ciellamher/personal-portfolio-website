@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { SiNotion } from "react-icons/si";
 
 export default function BeyondCodingSection() {
   return (
@@ -29,7 +29,7 @@ export default function BeyondCodingSection() {
         </p>
         <div className="flex justify-between items-center">
           <p className="text-sm font-bold text-neutral-900 dark:text-white transition-colors">Building "The Notion Campus"</p>
-          <Instagram size={16} className="text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
+          <SiNotion size={16} className="text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
         </div>
       </a>
     </section>

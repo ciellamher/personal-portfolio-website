@@ -28,25 +28,25 @@ export default function HeroSection() {
             href="https://calendar.app.google/EVMe3RzST39L25MH9"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl hover:bg-black dark:hover:bg-neutral-200 transition-all duration-300 font-semibold text-sm shadow-lg hover:scale-105 no-underline cursor-pointer"
+            className="flex items-center gap-2 px-7 py-3.5 bg-black dark:bg-white text-white dark:text-black rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all duration-300 font-medium text-sm shadow-lg hover:scale-105 no-underline cursor-pointer"
           >
             <Calendar size={18} /> Schedule a Call
           </a>
           <a
             href="/Graciella_Jimenez_Computer_Science_CV.pdf"
             download
-            className="flex items-center gap-2 px-5 py-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 font-semibold text-sm hover:scale-105 no-underline cursor-pointer"
+            className="flex items-center gap-2 px-6 py-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 font-medium text-sm hover:scale-105 no-underline cursor-pointer"
           >
             <Download size={18} /> CV
           </a>
           <div className="flex gap-2">
-            <a href="https://github.com/ciellamher" target="_blank" className="p-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105">
+            <a href="https://github.com/ciellamher" target="_blank" className="p-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105 flex items-center justify-center">
               <Github size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/ciellamher/" target="_blank" className="p-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105">
+            <a href="https://www.linkedin.com/in/ciellamher/" target="_blank" className="p-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105 flex items-center justify-center">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:work.gmdjimenez@gmail.com" className="p-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105">
+            <a href="mailto:work.gmdjimenez@gmail.com" className="p-3.5 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white transition-all hover:scale-105 flex items-center justify-center">
               <Mail size={20} />
             </a>
           </div>
