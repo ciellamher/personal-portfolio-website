@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent, MotionValue } from 'framer-motion';
 import { ArrowLeft, Briefcase } from 'lucide-react';
 import { experiences } from '@/lib/experience';
 
@@ -10,10 +10,7 @@ export default function ExperiencePage() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end 85%"]
-  });
+  const { scrollYProgress } = useScroll();
 
   // Grow the line from 0 to 100%
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
@@ -36,11 +33,11 @@ export default function ExperiencePage() {
         {/* Timeline Container */}
         <div className="relative" ref={containerRef}>
           {/* Central Line Background */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-neutral-200 dark:bg-neutral-800 -translate-x-1/2 rounded-full" />
+          <div className="absolute left-6 md:left-1/2 top-[24px] md:top-[32px] bottom-0 w-1 bg-neutral-200 dark:bg-neutral-800 -translate-x-1/2 rounded-full z-0" />
           
           {/* Animated Glow Line */}
           <motion.div 
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-neutral-900 dark:bg-white -translate-x-1/2 origin-top rounded-full z-0"
+            className="absolute left-6 md:left-1/2 top-[24px] md:top-[32px] bottom-0 w-1 bg-neutral-900 dark:bg-white -translate-x-1/2 origin-top rounded-full z-0"
             style={{ scaleY }}
           />
 
@@ -49,10 +46,15 @@ export default function ExperiencePage() {
               const isEven = index % 2 === 0;
 
               return (
-                <div key={index} className="relative flex items-center md:justify-between flex-col md:flex-row w-full group">
+                <div key={index} className="relative flex items-start md:justify-between flex-col md:flex-row w-full group">
                   
+                  {/* Mask to hide the line below the last dot */}
+                  {index === experiences.length - 1 && (
+                    <div className="absolute left-6 md:left-1/2 top-[32px] md:top-[40px] bottom-[-80px] w-8 bg-[#FDFDFD] dark:bg-neutral-900 -translate-x-1/2 z-[1]" />
+                  )}
+
                   {/* Timeline Node */}
-                  <TimelineNode />
+                  <TimelineNode index={index} total={experiences.length} scrollYProgress={scrollYProgress} />
 
                   <div className="w-full">
                     {/* MOBILE LAYOUT (Only visible on small screens) */}
@@ -159,17 +161,20 @@ function TimelineDescription({ exp, isEven }: { exp: any, isEven: boolean }) {
   );
 }
 
-function TimelineNode() {
+function TimelineNode({ index, total, scrollYProgress }: { index: number, total: number, scrollYProgress: MotionValue<number> }) {
   const [isFilled, setIsFilled] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const threshold = index === 0 ? 0 : (index / (total - 1)) - 0.03;
+    if (latest >= threshold && !isFilled) setIsFilled(true);
+    else if (latest < threshold && isFilled) setIsFilled(false);
+  });
 
   return (
     <motion.div 
-      onViewportEnter={() => setIsFilled(true)}
-      onViewportLeave={() => setIsFilled(false)}
-      viewport={{ margin: "-30% 0px -30% 0px" }}
       animate={{ scale: isFilled ? 1.5 : 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 transition-colors duration-300 
+      className={`absolute left-6 md:left-1/2 -translate-x-1/2 top-[24px] md:top-[32px] w-4 h-4 rounded-full border-4 z-10 transition-colors duration-300 
         ${isFilled 
           ? 'bg-neutral-900 border-neutral-900 dark:bg-white dark:border-white' 
           : 'bg-neutral-200 border-[#FDFDFD] dark:bg-neutral-700 dark:border-neutral-900'

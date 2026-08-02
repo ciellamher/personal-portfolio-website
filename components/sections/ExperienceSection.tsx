@@ -14,11 +14,16 @@ export default function ExperienceSection() {
         </Link>
       </div>
 
-      <div className="relative ml-3 border-l-2 border-neutral-100 dark:border-neutral-800 space-y-10 pb-4 transition-colors duration-700">
-        {experiences.slice(0, 10).map((item, i) => (
-          <div key={i} className="relative pl-10 group">
+      <div className="relative ml-3 flex flex-col transition-colors duration-700">
+        {experiences.slice(0, 10).map((item, i, arr) => (
+          <div key={i} className="relative pl-10 pb-10 last:pb-0 group">
+            {/* Timeline Line */}
+            {i !== arr.length - 1 && (
+              <div className="absolute left-[7px] top-[12px] bottom-[-12px] w-[2px] bg-neutral-100 dark:bg-neutral-800 z-0" />
+            )}
+            
             {/* Timeline Dot: Black for active, Grey for past */}
-            <div className={`absolute -left-[9px] top-1 h-4 w-4 rounded-full border-4 border-white dark:border-neutral-900 transition-transform group-hover:scale-125 
+            <div className={`absolute left-0 top-1 h-4 w-4 rounded-full border-4 border-white dark:border-neutral-900 z-10 transition-transform group-hover:scale-125 
             ${item.active ? 'bg-neutral-900 dark:bg-white' : 'bg-neutral-200 dark:bg-neutral-700'}`}
             />
 
