@@ -4,6 +4,13 @@ import { Award, ChevronRight } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
+      name: "Active Listening",
+      org: "Cloud Assess",
+      date: "Aug 2026",
+      img: "https://my.assessapp.com/favicon.ico",
+      link: "https://my.assessapp.com/badges/9dd2e550-b8a3-49cf-bed3-dfb7f2517a95"
+    },
+    {
       name: "Career Essentials in Generative AI by Microsoft and LinkedIn",
       org: "Microsoft",
       date: "Jul 2026",
