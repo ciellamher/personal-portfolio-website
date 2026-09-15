@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import LiveViewers from "@/components/ui/LiveViewers";
 import "./globals.css";
 import Chatbot from "@/components/ui/Chatbot";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
@@ -227,7 +226,6 @@ export default function RootLayout({
           <AnimatedBackground />
           {children}
           <Chatbot />
-          <LiveViewers />
         </ThemeProvider>
       </body>
     </html>
