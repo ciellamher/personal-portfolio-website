@@ -102,7 +102,7 @@ const allCerts = [
     org: "Cisco", 
     date: "Aug 2025", 
     img: "https://www.netacad.com/p/ff9e491c-49be-4734-803e-a79e6e83dab1/badges/badge-images/cyber_threat_management_37.png",
-    link: "https://www.credly.com/org/cisco/badge/cyber-threat-management"
+    link: "https://www.credly.com/badges/960515f3-a51f-4743-b2a6-3d2356de6280/public_url"
   },
   { 
     name: "Endpoint Security", 
