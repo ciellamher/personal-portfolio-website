@@ -11,6 +11,7 @@ import CertificationsSection from "@/components/sections/CertificationsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import GallerySection from "@/components/sections/GallerySection";
 import GithubSection from "@/components/sections/GithubSection";
+import TemplatesSection from "@/components/sections/TemplatesSection";
 import FooterSection from "@/components/sections/FooterSection";
 
 export default function Home() {
@@ -58,6 +59,11 @@ export default function Home() {
         {/* ROW 4 & FOOTER */}
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5, delay: 0.12 }} className="space-y-10">
           <ContactSection />
+        </motion.div>
+
+        {/* TEMPLATES */}
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.5, delay: 0.14 }}>
+          <TemplatesSection />
         </motion.div>
 
         {/* ROW 5: GITHUB */}
