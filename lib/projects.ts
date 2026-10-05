@@ -11,6 +11,17 @@ export type Project = {
   keyFeatures?: string[];
   caseStudyPrompt?: string;
   thumbnailPrompt?: string;
+  featured?: FeaturedShowcase;
+};
+
+// Projects shown with a device mockup on the projects page. Screenshots live in
+// public/projects/<slug>-{desktop,mobile}.jpg.
+export type FeaturedShowcase = {
+  slug: string;
+  tagline: string;
+  logo: string;
+  // Round logos get padded inside a white tile so they sit centered.
+  circularLogo?: boolean;
 };
 
 type ProjectSeed = Omit<Project, "desc">;
@@ -40,6 +51,7 @@ const oldDescriptions: Record<string, string> = {
   "Shell Number Guessing Game": "A command-line game implemented with shell scripting fundamentals to practice flow control, input handling, and terminal UX.",
   "HAU Org Finder": "A data-driven web application built with React and Vite to help university students match with campus organizations based on personality, career goals, and interests, featuring a robust filtering algorithm and responsive UI.",
   "The Daily Dish": "A premium digital recipe box and weekly meal planner built with Vanilla JavaScript. Features a smart fridge mode to track ingredients, multi-proxy link importing, and an immersive, interactive cooking mode.",
+  "Revive Pilates Studio": "A full-stack booking platform for a two-branch boutique Pilates studio. Clients pick their exact reformer, mat, or barre spot, buy class packages, and pay with receipt verification, while the studio runs schedules, coaches, and payments from a drag-and-drop admin dashboard.",
   "IG Curator": "A minimalist drag-and-drop dashboard to visually curate and schedule Instagram grids, reels, and stories.",
 };
 
@@ -65,12 +77,31 @@ const buildDescription = (project: ProjectSeed): string => {
 
 const projectSeeds: ProjectSeed[] = [
   {
+    name: "Revive Pilates Studio",
+    status: "Finished",
+    date: "September 2026",
+    tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Web Dev", "UI/UX", "Git", "Version Control"],
+    link: "https://revive-pilates-studio-6b8h.vercel.app/",
+    githubLink: "https://github.com/ciellamher/revive-pilates-studio",
+    featured: {
+      slug: "revive-pilates",
+      tagline: "Book a class, pick your reformer, and manage packages at a boutique Pilates studio.",
+      logo: "/projects/revive-pilates-logo.png",
+      circularLogo: true,
+    },
+  },
+  {
     name: "IG Curator",
     status: "Finished",
     date: "July 2026",
     tech: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Web Dev", "UI/UX", "Git", "Version Control"],
     link: "https://ig-curator.vercel.app",
     githubLink: "https://github.com/ciellamher/ig-curator",
+    featured: {
+      slug: "ig-curator",
+      tagline: "Plan and preview your Instagram grid, reels, and stories before you post.",
+      logo: "/projects/ig-curator-logo.svg",
+    },
   },
   {
     name: "The Daily Dish",
@@ -79,6 +110,12 @@ const projectSeeds: ProjectSeed[] = [
     tech: ["HTML", "CSS", "JavaScript", "Web Dev", "UI/UX", "Git", "Version Control"],
     link: "https://the-daily-dish-iota.vercel.app",
     githubLink: "https://github.com/ciellamher/the-daily-dish",
+    featured: {
+      slug: "the-daily-dish",
+      tagline: "An AI cookbook and meal planner built around what's already in your fridge.",
+      logo: "/projects/the-daily-dish-logo.png",
+      circularLogo: true,
+    },
   },
   {
     name: "HAU Org Finder",
@@ -87,6 +124,11 @@ const projectSeeds: ProjectSeed[] = [
     tech: ["React", "Vite", "Web Dev", "UI/UX", "JavaScript", "Git", "Version Control"],
     link: "https://hau-org-finder.vercel.app/",
     githubLink: "https://github.com/ciellamher/hau-org-finder",
+    featured: {
+      slug: "hau-org-finder",
+      tagline: "Answer a few questions and find the campus orgs that fit you at Holy Angel University.",
+      logo: "/projects/hau-org-finder-logo.svg",
+    },
   },
   {
     name: "Algorithmic Memory Allocation Simulator",
@@ -311,5 +353,10 @@ export const allProjects: Project[] = projectSeeds.map((project) => ({
   ...project,
   desc: buildDescription(project),
 }));
+
+export const featuredProjects = allProjects.filter((project) => project.featured);
+
+// Shipped projects not already shown in the featured section.
+export const otherProjects = allProjects.filter((project) => (project.status === "Finished" || project.status === "Ongoing") && !project.featured);
 
 export const recentProjects = allProjects.filter((project) => project.status === "Finished" || project.status === "Ongoing").slice(0, 4);

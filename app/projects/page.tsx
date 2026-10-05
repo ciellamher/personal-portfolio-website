@@ -1,24 +1,32 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Github } from 'lucide-react';
-import { allProjects } from "../../lib/projects";
+import { featuredProjects, otherProjects } from "../../lib/projects";
+import FeaturedProjectCard from "@/components/ui/FeaturedProjectCard";
 
 export default function ProjectsPage() {
   const router = useRouter();
-  const finishedProjects = allProjects.filter((project) => project.status === "Finished" || project.status === "Ongoing");
 
   return (
-    <main className="min-h-screen bg-[#FDFDFD] dark:bg-neutral-900 text-neutral-900 dark:text-white py-20 px-6 font-sans transition-colors duration-700">
+    <main className="min-h-screen bg-[#FDFDFD] dark:bg-neutral-900 text-neutral-900 dark:text-white py-16 sm:py-20 px-4 sm:px-6 font-sans transition-colors duration-700">
       <div className="max-w-5xl mx-auto">
         <button onClick={() => router.push('/#projects')} className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors mb-8 text-sm font-medium cursor-pointer bg-transparent border-0 p-0">
           <ArrowLeft size={16} /> Back to Home
         </button>
         
-        <h1 className="text-4xl font-bold mb-12 tracking-tight">All Projects</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 tracking-tight">All Projects</h1>
 
+        <h2 className="text-2xl font-bold mb-6 tracking-tight">Featured</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+          {featuredProjects.map((project) => (
+            <FeaturedProjectCard key={project.name} project={project} />
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mb-6 tracking-tight">More Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {finishedProjects.map((project, i) => (
-            <div key={i} className="relative bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 flex flex-col group hover:border-neutral-900 dark:hover:border-neutral-500 transition-all duration-300 h-full hover:shadow-sm">
+          {otherProjects.map((project, i) => (
+            <div key={i} className="relative bg-white dark:bg-neutral-900 p-6 sm:p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 flex flex-col group hover:border-neutral-900 dark:hover:border-neutral-500 transition-all duration-300 h-full hover:shadow-sm">
               <div className="flex flex-1 flex-col">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-2">
