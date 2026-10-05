@@ -6,7 +6,9 @@ import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import NavBar from "@/components/ui/NavBar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+// Matches easlo.co: Inter for text, with the optical-size axis so large
+// headings render in the Inter Display cut.
+const inter = Inter({ subsets: ["latin"], axes: ["opsz"], variable: "--font-inter" });
 
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -219,7 +221,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} antialiased bg-white dark:bg-neutral-950`}
+        className={`${inter.className} ${inter.variable} antialiased tracking-[-0.25px] bg-white dark:bg-neutral-950`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />
