@@ -4,6 +4,13 @@ import { Award, ChevronRight } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
+      name: "Fundamentals of Communication",
+      org: "upGrad",
+      date: "Oct 2026",
+      img: "/logos/upgrad.svg",
+      link: "#"
+    },
+    {
       name: "Active Listening",
       org: "Cloud Assess",
       date: "Aug 2026",
