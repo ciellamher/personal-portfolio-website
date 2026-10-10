@@ -95,7 +95,7 @@ const projectSeeds: ProjectSeed[] = [
     status: "Finished",
     date: "July 2026",
     tech: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Web Dev", "UI/UX", "Git", "Version Control"],
-    link: "https://ig-curator.vercel.app",
+    link: "https://ig-curator-public.vercel.app/",
     githubLink: "https://github.com/ciellamher/ig-curator",
     featured: {
       slug: "ig-curator",
