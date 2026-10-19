@@ -33,7 +33,7 @@ export const templates: NotionTemplate[] = [
     ],
     category: "School",
     icon: IdCardLanyard,
-    link: "https://app.notion.com/p/Extracurricular-Tracker-3fe1ed0257f280448a96c9288290df52",
+    link: "https://valiant-cod-82e.notion.site/Extracurricular-Tracker-3fe9947678678038b061d538ab774125",
   },
   {
     slug: "start-of-the-semester",
