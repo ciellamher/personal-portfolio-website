@@ -1,4 +1,4 @@
-import { BookOpen, SquarePen, Target, type LucideIcon } from "lucide-react";
+import { BookOpen, IdCardLanyard, SquarePen, Target, type LucideIcon } from "lucide-react";
 
 export type NotionTemplate = {
   slug: string;
@@ -14,6 +14,27 @@ export type NotionTemplate = {
 };
 
 export const templates: NotionTemplate[] = [
+  {
+    slug: "extracurricular-tracker",
+    image: "/templates/extracurricular-tracker.jpg",
+    name: "Extracurricular Tracker",
+    tagline: "Organize your orgs, events, and leadership life outside the classroom.",
+    description: [
+      "Extracurricular Tracker keeps everything you do outside the classroom in one workspace, from committee tasks and event timelines to meeting notes and volunteer hours.",
+      "Track every org and role you hold, plan events stage by stage, log your volunteer hours, and build a resume-ready record of your leadership milestones as you go.",
+    ],
+    included: [
+      "My Roles database for every org and position",
+      "Tasks with Task Board, Due This Week, and Deadlines views",
+      "Meetings database with recent meeting notes",
+      "Events calendar, planning timeline, and stage board",
+      "Volunteer Hours log with totals by type",
+      "Leadership Portfolio of resume-ready milestones",
+    ],
+    category: "School",
+    icon: IdCardLanyard,
+    link: "https://app.notion.com/p/Extracurricular-Tracker-3fe1ed0257f280448a96c9288290df52",
+  },
   {
     slug: "start-of-the-semester",
     image: "/templates/start-of-the-semester.jpg",

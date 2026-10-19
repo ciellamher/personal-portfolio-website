@@ -17,7 +17,7 @@ export default function TemplatesSection() {
       <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-400">Free Notion setups I made to help students stay organized.</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-        {templates.map((template) => (
+        {templates.slice(0, 3).map((template) => (
           <TemplateCard key={template.slug} template={template} />
         ))}
       </div>

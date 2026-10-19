@@ -107,7 +107,7 @@ export default async function TemplatePage({ params }: Props) {
               View all <ChevronRight size={18} />
             </Link>
           </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-8">
             {moreTemplates.map((other) => (
               <TemplateCard key={other.slug} template={other} />
             ))}
