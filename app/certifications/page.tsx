@@ -9,7 +9,7 @@ const allCerts = [
     org: "Anthropic",
     date: "Oct 2026",
     img: "/logos/anthropic.png",
-    link: "https://academy.claude.com/verify/0add2bd8032ec659c3f7e4f7864e70b2"
+    link: "https://www.linkedin.com/safety/go/?url=https%3A%2F%2Facademy.claude.com%2Fverify%2F3fb8e90f92697339d94f55d3d04718ec&urlhash=-oYP&mt=g8NbACOC-fBEOuDs2lMbycgWU1Sd-3r7coErWQ9hoxlKTIr-6WdjHIEP0z_LtyZ1OQ5hxK8CmqmadbcngxF3xnoXySfc&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BzOOsaGJxSKKPJDO0Aksipg%3D%3D"
   },
   {
     name: "Fundamentals of Communication",
