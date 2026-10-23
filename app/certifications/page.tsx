@@ -5,6 +5,13 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 const allCerts = [
   // --- 2026 CERTIFICATIONS ---
   {
+    name: "Claude Academy: Claude Code 101",
+    org: "Anthropic",
+    date: "Oct 2026",
+    img: "/logos/anthropic.png",
+    link: "https://academy.claude.com/verify/0add2bd8032ec659c3f7e4f7864e70b2"
+  },
+  {
     name: "Fundamentals of Communication",
     org: "upGrad",
     date: "Oct 2026",

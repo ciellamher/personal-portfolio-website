@@ -50,6 +50,7 @@ Pampanga, PH | +63 (929) 856-9503 | work.gmdjimenez@gmail.com
 ---
 
 ## PROFESSIONAL CERTIFICATIONS
+**Anthropic:** Claude Academy: Claude Code 101
 **AWS Academy:** AWS Academy Graduate – Cloud Foundations
 **Cisco Networking Academy:** Data Analytics Essentials | Introduction to Networks | Cyber Threat Management | Endpoint Security | English for IT 1 | JavaScript Essentials 1 | Introduction to Cybersecurity
 **IBM:** Artificial Intelligence Fundamentals | AI Fundamentals with IBM SkillsBuild

@@ -4,6 +4,13 @@ import { Award, ChevronRight } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
+      name: "Claude Academy: Claude Code 101",
+      org: "Anthropic",
+      date: "Oct 2026",
+      img: "/logos/anthropic.png",
+      link: "https://academy.claude.com/verify/0add2bd8032ec659c3f7e4f7864e70b2"
+    },
+    {
       name: "Fundamentals of Communication",
       org: "upGrad",
       date: "Oct 2026",
@@ -83,19 +90,34 @@ export default function CertificationsSection() {
           }, [[], []] as Array<Array<{ name: string; org: string; date: string; img: string; link: string }>>)
           .map((column, columnIndex) => (
             <div key={columnIndex} className="space-y-4">
-              {column.map((cert, certIndex) => (
-                <div key={`${columnIndex}-${certIndex}`} className="flex items-center gap-4 bg-neutral-50 dark:bg-neutral-950 p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 group transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900">
-                  <img
-                    src={cert.img}
-                    alt={cert.name}
-                    className="w-12 h-12 object-contain rounded-lg dark:bg-white/90 dark:p-1.5 transition-all duration-700"
-                  />
-                  <div>
-                    <h4 className="font-bold text-sm text-neutral-900 dark:text-white transition-colors duration-700">{cert.name}</h4>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 transition-colors duration-700">{cert.org} • {cert.date}</p>
-                  </div>
-                </div>
-              ))}
+              {column.map((cert, certIndex) => {
+                const isLink = cert.link && cert.link !== "#";
+                const Wrapper = isLink ? 'a' : 'div';
+                const wrapperProps = isLink
+                  ? {
+                      href: cert.link,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      className: "flex items-center gap-4 bg-neutral-50 dark:bg-neutral-950 p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 group transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900 cursor-pointer no-underline"
+                    }
+                  : {
+                      className: "flex items-center gap-4 bg-neutral-50 dark:bg-neutral-950 p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 group transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                    };
+
+                return (
+                  <Wrapper key={`${columnIndex}-${certIndex}`} {...wrapperProps}>
+                    <img
+                      src={cert.img}
+                      alt={cert.name}
+                      className="w-12 h-12 object-contain rounded-lg dark:bg-white/90 dark:p-1.5 transition-all duration-700 shrink-0"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-bold text-sm text-neutral-900 dark:text-white transition-colors duration-700 leading-snug">{cert.name}</h4>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 transition-colors duration-700">{cert.org} • {cert.date}</p>
+                    </div>
+                  </Wrapper>
+                );
+              })}
             </div>
           ))}
       </div>
