@@ -11,6 +11,14 @@ export interface Experience {
 export const experiences: Experience[] = [
   // CURRENT ACTIVE ROLES
   { 
+    title: "Data Analyst Intern – Airport Experience", 
+    org: "Cebu Pacific Air", 
+    year: "2026 - Present", 
+    active: true,
+    logo: "/logos/cebupacific.png",
+    description: "Analyzing operational performance, passenger journey touchpoints, and airport flow metrics to uncover actionable insights, streamline ground operations, and elevate the airport experience."
+  },
+  { 
     title: "BS Computer Science", 
     org: "Holy Angel University", 
     year: "2023 - Present", 

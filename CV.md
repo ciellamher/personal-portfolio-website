@@ -19,6 +19,11 @@ Pampanga, PH | +63 (929) 856-9503 | work.gmdjimenez@gmail.com
 
 ## EXPERIENCE
 
+**Cebu Pacific Air** | Pasay, National Capital Region, PH (Hybrid)
+*Data Analyst Intern – Airport Experience* | Oct 2026 – Present
+* Analyzing operational performance metrics, passenger journey touchpoints, and airport flow data to derive actionable insights for enhancing the passenger experience.
+* Developing analytical dashboards and performance reports to support data-driven decision-making across airport ground operations.
+
 **Notion** | Pampanga, PH
 *Campus Leader* | Sept 2025 – Present
 * Spearheaded the regional Notion student community, architecting internal workspace templates to streamline event planning and organizational logistics.
