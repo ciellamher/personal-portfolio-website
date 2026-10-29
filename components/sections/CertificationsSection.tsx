@@ -4,6 +4,13 @@ import { Award, ChevronRight } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
+      name: "Effective Leadership",
+      org: "HP LIFE",
+      date: "Oct 2026",
+      img: "/logos/hp.svg",
+      link: "https://www.life-global.org/certificate/75fa6ca1-3642-49b3-83bb-5dd97d60e203"
+    },
+    {
       name: "Claude Academy: Claude Code 101",
       org: "Anthropic",
       date: "Oct 2026",
